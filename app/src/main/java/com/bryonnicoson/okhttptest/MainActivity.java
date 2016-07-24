@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-
 import java.io.IOException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,11 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private final Gson gson = new Gson();
     Book book;
 
-    public TextView tvTitle, tvAuthor, tvPublished, tvSetting, tvCharacters, tvFiction;
+    @BindView(R.id.tv_title) TextView tvTitle;
+    @BindView(R.id.tv_author) TextView tvAuthor;
+    @BindView(R.id.tv_published) TextView tvPublished;
+    @BindView(R.id.tv_fiction) TextView tvFiction;
+    @BindView(R.id.tv_setting) TextView tvSetting;
+    @BindView(R.id.tv_characters) TextView tvCharacters;
 
-
-
-    private class DogFetchTask extends AsyncTask<String, Void, Book> {
+    private class HerokuCall extends AsyncTask<String, Void, Book> {
 
         @Override
         protected Book doInBackground(String... params) {
@@ -53,19 +56,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(Book book) {
-
-            tvTitle = (TextView) findViewById(R.id.tv_title);
             tvTitle.setText(book.getTitle());
-            tvAuthor = (TextView) findViewById(R.id.tv_author);
             tvAuthor.setText(book.getAuthor());
-            tvPublished = (TextView) findViewById(R.id.tv_published);
             tvPublished.setText(Integer.toString(book.getYearPublished()));
-            tvSetting = (TextView) findViewById(R.id.tv_setting);
-            tvSetting.setText(book.getSetting());
-            tvCharacters = (TextView) findViewById(R.id.tv_characters);
-            tvCharacters.setText(book.getCharacterString());
-            tvFiction = (TextView) findViewById(R.id.tv_fiction);
             tvFiction.setText(Boolean.toString(book.getFiction()));
+            tvSetting.setText(book.getSetting());
+            tvCharacters.setText(book.getCharacterString());
         }
     }
 
@@ -73,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new DogFetchTask().execute();
+        ButterKnife.bind(this);
+        new HerokuCall().execute();
     }
 }
