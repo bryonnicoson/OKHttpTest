@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.bryonnicoson.okhttptest.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:id="@+id/tv_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Simple String)"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_title"
+        android:layout_alignBaseline="@+id/tv_title"
+        android:id="@+id/tv_title_label" />
+
+    <TextView
+        android:layout_below="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:id="@+id/tv_author" />
+
+    <TextView
+        android:layout_toRightOf="@id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Simple String)"
+        android:id="@+id/tv_author_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_author"
+        android:layout_alignBaseline="@+id/tv_author" />
+
+    <TextView
+        android:layout_below="@id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Published"
+        android:id="@+id/tv_published" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Simple Integer)"
+        android:id="@+id/tv_published_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_published"
+        android:layout_alignBaseline="@+id/tv_published" />
+
+    <TextView
+        android:layout_below="@id/tv_published"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fiction?"
+        android:id="@+id/tv_fiction" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Boolean)"
+        android:id="@+id/tv_fiction_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_fiction"
+        android:layout_alignBaseline="@+id/tv_fiction" />
+
+
+    <TextView
+        android:layout_below="@id/tv_fiction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Setting"
+        android:id="@+id/tv_setting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(String with different @SerializedName)"
+        android:id="@+id/tv_setting_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_setting"
+        android:layout_alignBaseline="@+id/tv_setting" />
+
+    <TextView
+        android:layout_below="@id/tv_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:id="@+id/tv_characters" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(List of Strings)"
+        android:id="@+id/tv_characters_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_characters"
+        android:layout_alignBaseline="@+id/tv_characters" />
+</RelativeLayout>
