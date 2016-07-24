@@ -3,6 +3,7 @@ package com.bryonnicoson.okhttptest;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -11,6 +12,7 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -28,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_setting) TextView tvSetting;
     @BindView(R.id.tv_characters) TextView tvCharacters;
     @BindView(R.id.tv_latitude) TextView tvLatitude;
+
+    @BindView(R.id.button) Button button;
+
+    @OnClick(R.id.button)
+    public void onClick(){
+        new HerokuCall().execute();
+    }
 
     private class HerokuCall extends AsyncTask<String, Void, Book> {
 
@@ -72,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        new HerokuCall().execute();
+
+
     }
 }
