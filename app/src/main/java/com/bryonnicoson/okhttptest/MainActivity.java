@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             //String trimmed = result.substring(2, result.length()-1);
             //return trimmed;
             return book;
-
         }
 
         protected void onPostExecute(Book book) {

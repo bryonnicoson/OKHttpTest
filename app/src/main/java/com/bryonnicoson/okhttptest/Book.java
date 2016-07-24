@@ -1,5 +1,7 @@
 package com.bryonnicoson.okhttptest;
 
+import android.graphics.Region;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -16,6 +18,11 @@ public class Book {
     private Boolean isFiction;
     @SerializedName("Characters")
     private List<String> characters;
+
+    // adding fields for yelp herokutest
+    public Region region;
+
+    public int total;
 
     Book() {
         // no args constructor
@@ -74,5 +81,9 @@ public class Book {
         for (String character : characters)
             characterString.append(character + "\n");
         return characterString.toString();
+    }
+
+    public int getTotal() {
+        return total;
     }
 }
