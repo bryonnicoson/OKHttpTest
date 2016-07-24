@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
     Book book;
+    Center center;
 
     @BindView(R.id.tv_title) TextView tvTitle;
     @BindView(R.id.tv_author) TextView tvAuthor;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_fiction) TextView tvFiction;
     @BindView(R.id.tv_setting) TextView tvSetting;
     @BindView(R.id.tv_characters) TextView tvCharacters;
+    @BindView(R.id.tv_latitude) TextView tvLatitude;
 
     private class HerokuCall extends AsyncTask<String, Void, Book> {
 
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             tvFiction.setText(Boolean.toString(book.getFiction()));
             tvSetting.setText(book.getSetting());
             tvCharacters.setText(book.getCharacterString());
+            tvLatitude.setText(Double.toString(center.getLatitude()));
         }
     }
 

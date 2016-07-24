@@ -21,7 +21,6 @@ public class Book {
 
     // adding fields for yelp herokutest
     public Region region;
-
     public int total;
 
     Book() {

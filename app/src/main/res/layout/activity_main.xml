@@ -113,4 +113,21 @@
         android:layout_toEndOf="@id/tv_characters"
         android:layout_alignBaseline="@+id/tv_characters" />
 
+    <TextView
+        android:layout_below="@id/tv_characters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        android:id="@+id/tv_latitude" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Netsted Object Double (region\center\latitude)"
+        android:id="@+id/tv_latitude_label"
+        android:textColor="#ff0000"
+        android:textSize="8dp"
+        android:layout_toEndOf="@id/tv_latitude"
+        android:layout_alignBaseline="@+id/tv_latitude" />
+
 </RelativeLayout>
