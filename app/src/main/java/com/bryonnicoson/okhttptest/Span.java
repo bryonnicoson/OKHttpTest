@@ -1,21 +1,25 @@
 package com.bryonnicoson.okhttptest;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by bryon on 7/24/16.
  */
 public class Span {
-    public Double latitude_delta;
-    public Double longitude_delta;
+    @SerializedName("latitude_delta")
+    public Double latitudeDelta;
+    @SerializedName("longitude_delta")
+    public Double longitudeDelta;
 
     public Span() {
         // empty constructor
     }
 
-    public Double getLatitude_delta() {
-        return latitude_delta;
+    public Double getLatitudeDelta() {
+        return latitudeDelta;
     }
 
-    public Double getLongitude_delta() {
-        return longitude_delta;
+    public Double getLongitudeDelta() {
+        return longitudeDelta;
     }
 }

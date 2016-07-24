@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
     Book book;
-    Center center;
 
     @BindView(R.id.tv_title) TextView tvTitle;
     @BindView(R.id.tv_author) TextView tvAuthor;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             tvFiction.setText(Boolean.toString(book.getFiction()));
             tvSetting.setText(book.getSetting());
             tvCharacters.setText(book.getCharacterString());
-            tvLatitude.setText(Double.toString(center.getLatitude()));
+            tvLatitude.setText(Double.toString(book.region.center.getLatitude()));
         }
     }
 
@@ -72,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         new HerokuCall().execute();
     }
 }
